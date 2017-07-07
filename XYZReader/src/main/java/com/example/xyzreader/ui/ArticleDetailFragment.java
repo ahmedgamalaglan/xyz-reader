@@ -22,6 +22,7 @@ import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ShareCompat;
+import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.graphics.Palette;
 import android.text.Html;
@@ -147,8 +148,22 @@ public class ArticleDetailFragment extends Fragment implements
                         .getIntent(), getString(R.string.action_share)));
             }
         });
-        fab = (FloatingActionButton) mRootView.findViewById(R.id.share_fab);
 
+        fab = (FloatingActionButton) mRootView.findViewById(R.id.share_fab);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            fab.setAlpha(0f);
+            fab.setScaleX(0f);
+            fab.setScaleY(0f);
+            fab.setTranslationZ(1f);
+            fab.animate()
+                    .alpha(1f)
+                    .scaleX(1f)
+                    .scaleY(1f)
+                    .translationZ(25f)
+                    .setInterpolator(new FastOutSlowInInterpolator())
+                    .setStartDelay(300)
+                    .start();
+        }
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
