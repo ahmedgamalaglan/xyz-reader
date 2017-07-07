@@ -8,6 +8,8 @@
     <dimen name="fab_press_translation_z">6dp</dimen>
     <dimen name="fab_margin">24dp</dimen>
     <dimen name="default_4">4dp</dimen>
+    <dimen name="default_6">6dp</dimen>
+
     <dimen name="default_8">8dp</dimen>
 
 
