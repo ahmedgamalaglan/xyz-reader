@@ -150,20 +150,7 @@ public class ArticleDetailFragment extends Fragment implements
         });
 
         fab = (FloatingActionButton) mRootView.findViewById(R.id.share_fab);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            fab.setAlpha(0f);
-            fab.setScaleX(0f);
-            fab.setScaleY(0f);
-            fab.setTranslationZ(1f);
-            fab.animate()
-                    .alpha(1f)
-                    .scaleX(1f)
-                    .scaleY(1f)
-                    .translationZ(25f)
-                    .setInterpolator(new FastOutSlowInInterpolator())
-                    .setStartDelay(300)
-                    .start();
-        }
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
