@@ -37,9 +37,9 @@
                 android:value=".ui.ArticleListActivity" />
         </activity>
 
-        <uses-library android:name="org.apache.http.legacy" android:required="false" />
         <service android:name=".data.UpdaterService"
             android:exported="false" />
+        <uses-library android:name="org.apache.http.legacy" android:required="false" />
 
         <provider android:name=".data.ItemsProvider"
             android:authorities="com.example.xyzreader"
